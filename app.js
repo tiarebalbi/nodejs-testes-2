@@ -11,13 +11,13 @@ var db = require("mongojs").connect(propriedades.config.databaseUrl, propriedade
 var aa = function(tempo) {
 	var memoria = process.memoryUsage();
 	db.memoria.save(memoria, function(erro, salvo) {
-		if( erro || !salvo ) console.log("User not saved");
-  		else console.log("User saved" + salvo);
+		if( erro || !salvo ) console.log("Nao foi possivel salvar");
+  		else console.log("Registro Salvo");
 	});
 	console.log();
 	
 	setTimeout(function() {
-		i = i +1;	
+		i++;
 
 		if(stop == false) {
 			aa();	
